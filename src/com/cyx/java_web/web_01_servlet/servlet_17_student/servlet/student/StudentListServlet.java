@@ -19,7 +19,7 @@ public class StudentListServlet extends HttpServlet {
     private IStudentDao studentDao;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         /*
             因为 Servlet 是单例的，而在 Servlet 中使用成员变量会造成线程不安全，所以在初始化的时候创建对象，
             这样 studentDao 在该 Servlet 中也就只有一个对象了。
