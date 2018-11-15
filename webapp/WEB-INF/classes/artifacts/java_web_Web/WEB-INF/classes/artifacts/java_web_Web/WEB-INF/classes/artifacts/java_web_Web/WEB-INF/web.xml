@@ -137,4 +137,24 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <!-- 配置全局初始化参数 -->
+    <context-param>
+        <param-name>version</param-name>
+        <param-value>1.0</param-value>
+    </context-param>
+    
+    <!-- 全局的错误提示页面 -->
+    <error-page>
+        <!-- 异常类型(因为异常类型很多，所以一般不适用此元素) -->
+        <!-- <exception-type>java.lang.NullPointerException</exception-type> -->
+        <!-- 错误码类型（一般使用的此元素） -->
+        <error-code>404</error-code>
+        <!-- 错误提示页面资源地址，必须以“/”开头 -->
+        <location>/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
 </web-app>

@@ -1,6 +1,11 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.cyx.java_web.web_01_servlet.servlet_17_student.domain.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
+<%--
+    将 JSP 页面放在 WEB-INF 目录中，是因为 WEB-INF 目录是受保护目录，外界不可以直接访问， 这样就可以避免外界通过地址拼接直接访问页面。
+--%>
+
 <html>
 <head>
     <title>学生列表</title>
