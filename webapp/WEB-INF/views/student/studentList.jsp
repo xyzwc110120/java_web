@@ -11,7 +11,8 @@
 </head>
 <body>
     <h1>学生列表</h1>
-    <a href="#">添加</a>
+    <%-- 通过代码获取上下文路径，这样修改了上下文路径也不需要改源码 --%>
+    <a href="${pageContext.request.contextPath}/student/merge?opt=edit">添加</a>
     <table border="1" width="80%" cellpadding="0" cellspacing="0">
         <tr style="background-color: cadetblue">
             <th>ID</th>
@@ -31,8 +32,9 @@
                 <td>${student.name}</td>
                 <td>${student.age}</td>
                 <td>
-                    <a href="/java_web/student/delete?id=${student.id}">删除</a>&nbsp;|&nbsp;
-                    <a href="#">修改</a>
+                    <a href="${pageContext.request.contextPath}/student/merge?opt=delete&id=${student.id}">删除</a>
+                    &nbsp;|&nbsp;
+                    <a href="${pageContext.request.contextPath}/student/merge?opt=edit&id=${student.id}">修改</a>
                 </td>
             </tr>
         </c:forEach>

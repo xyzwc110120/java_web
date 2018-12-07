@@ -45,7 +45,6 @@
         <url-pattern>/init</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>NewServlet1</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_03_extends.extends1.NewServlet1</servlet-class>
@@ -59,7 +58,6 @@
         <url-pattern>/new1</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>NewServlet2</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_03_extends.extends2.NewServlet2</servlet-class>
@@ -72,8 +70,7 @@
         <servlet-name>NewServlet2</servlet-name>
         <url-pattern>/new2</url-pattern>
     </servlet-mapping>
-    
-    
+
     <servlet>
         <servlet-name>NewServlet3</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_03_extends.extends3.NewServlet3</servlet-class>
@@ -82,7 +79,6 @@
         <servlet-name>NewServlet3</servlet-name>
         <url-pattern>/new3</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>NewServlet4</servlet-name>
@@ -93,7 +89,6 @@
         <url-pattern>/new4</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>HttpServletRequestDemo</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_04_request.HttpServletRequestDemo</servlet-class>
@@ -102,7 +97,6 @@
         <servlet-name>HttpServletRequestDemo</servlet-name>
         <url-pattern>/requestDemo</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
@@ -113,7 +107,6 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>HttpServletResponseDemo</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_06_response.HttpServletResponseDemo</servlet-class>
@@ -123,7 +116,6 @@
         <url-pattern>/resp</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <servlet-class>com.cyx.java_web.web_01_servlet.servlet_07_simpleCalculator.SimpleCalculatorServlet</servlet-class>
@@ -132,17 +124,20 @@
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/calculator</url-pattern>
     </servlet-mapping>
+
     
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+
 
     <!-- 配置全局初始化参数 -->
     <context-param>
         <param-name>version</param-name>
         <param-value>1.0</param-value>
     </context-param>
-    
+
+
     <!-- 全局的错误提示页面 -->
     <error-page>
         <!-- 异常类型(因为异常类型很多，所以一般不适用此元素) -->
