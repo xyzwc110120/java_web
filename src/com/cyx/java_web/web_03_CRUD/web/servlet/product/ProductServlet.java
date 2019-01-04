@@ -29,6 +29,13 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 判断当前用户是否登陆（判断 session 中是否存在 USER_IN_SESSION）
+        if (req.getSession().getAttribute("USER_IN_SESSION") == null) {
+            // 若不存在，返回登陆页面
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            return;
+        }
+
         req.setCharacterEncoding("UTF-8");
         String opt = req.getParameter("opt") == null ? "" : req.getParameter("opt");
         switch (opt) {
@@ -46,11 +53,17 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 获取商品列表
+     */
     private void list(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("products", productDAO.getAll());
         req.getRequestDispatcher("/WEB-INF/views/product/productList.jsp").forward(req, resp);
     }
 
+    /**
+     * 删除指定商品
+     */
     private void delete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String id = req.getParameter("id");
         if (isNotBlank(id)) {
@@ -59,6 +72,9 @@ public class ProductServlet extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/product");
     }
 
+    /**
+     * 修改制定商品
+     */
     private void edit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         if (isNotBlank(id)) {
@@ -68,6 +84,9 @@ public class ProductServlet extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/views/product/productEdit.jsp").forward(req, resp);
     }
 
+    /**
+     * 添加商品
+     */
     private void save(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String id = req.getParameter("id");
         Product product = new Product(Integer.valueOf(req.getParameter("productTypeId")),

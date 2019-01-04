@@ -31,7 +31,8 @@ public class BeanHandler<T> implements IResultSetHandler<T> {
             for (PropertyDescriptor descriptor: descriptors) {
                 descriptor.getWriteMethod().invoke(t, set.getObject(descriptor.getName()));
             }
+            return t;
         }
-        return t;
+        return null;
     }
 }
