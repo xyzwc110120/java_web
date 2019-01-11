@@ -1,4 +1,4 @@
-package com.cyx.java_web.web_05_filter_listener.filter;
+package com.cyx.java_web.web_05_filter_listener.filter.hello;
 
 import javax.servlet.*;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class HelloFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("执行过滤操作");
         /* 放行操作（不然请求无法发送至 Servlet） */
-        // chain.doFilter(request, response);
+        chain.doFilter(request, response);
     }
 
     @Override
