@@ -10,5 +10,4 @@ public interface IProductTypeDAO {
      * 获取所有商品类型列表
      */
     List<ProductType> getAll();
-
 }
